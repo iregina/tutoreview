@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem "camaleon_cms",  '>=2.1.1.4' # Stable versions 2.1.1.4, 2.1.1, 2.1.0
+# gem "camaleon_cms", github: 'owen2345/camaleon-cms' # current development version
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -45,3 +48,8 @@ group :development do
   gem 'spring'
 end
 
+
+
+#################### Camaleon CMS include all gems for plugins and themes #################### 
+require './lib/plugin_routes' 
+instance_eval(PluginRoutes.draw_gems)
